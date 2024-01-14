@@ -19,24 +19,25 @@ gamePattern.push (randomChosenColour);
 $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
 
 
-var myAudio = new Audio("sounds" + randomChosenColour + ".mp3")
-myAudio.play();
+playSound(randomChosenColour);
 
 
 $("div[type=button] ").click(function(){
    var userChosenColour = $(this).attr('id');
-   
+   playSound(userChosenColour);
    userClickedPattern.push (userChosenColour);
    console.log(userClickedPattern);
-})
+});
 
-   
-   
 
-  
+
 };
 
 
+function playSound(name){
+   var myAudio = new Audio("sounds/" + name + ".mp3")
+myAudio.play();
+ }  ;
 
 
 
