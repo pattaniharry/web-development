@@ -86,8 +86,15 @@ function checkAnswer(currentlevel){
       }, 200);
       
       $("h1").text("Game over Press Any Key to Restart");
+      startover()
    };
   
 };
 };
 
+function startover(){
+   level = 0;
+   gamePattern.length = 0;
+   started = false;
+   userClickedPattern.length = 0;
+}
