@@ -24,8 +24,16 @@ function PasswordChecker(req,res,next){
   next(); 
 }
 
-app.use(PasswordChecker)
+app.use(PasswordChecker); 
 
 app.get("/", (req ,res) => {
-    res.sendFile(__dirname + "/public/index.html")
+    res.sendFile(__dirname + "/public/index.html");
   });
+
+  app.post ("/check", (req , res) => {
+    if (userIsAuthorized) {
+      res.sendFile(__dirname + "/public/index.html");
+    } else {
+      res.sendFile(__dirname + "/public/index.html");
+    }
+  })
